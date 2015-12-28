@@ -546,6 +546,190 @@ jnipp::LocalRef<JavaLangString> JavaLangString::intern() const {
 }
 #undef CASE_INSENSITIVE_ORDER
 const jnipp::StaticField<JavaUtilComparator> JavaLangString::CASE_INSENSITIVE_ORDER ("java/lang/String", "CASE_INSENSITIVE_ORDER", "Ljava/util/Comparator;");
+jnipp::GlobalRef<jnipp::Class>& JavaUtilMap::clazz() {
+    static jnipp::GlobalRef<jnipp::Class> cls;
+    if (!cls) cls.set(jnipp::Class::forName("java/util/Map"));
+    return cls;
+}
+
+// public abstract java.lang.Object java.util.Map.remove(java.lang.Object)
+jnipp::LocalRef<JavaLangObject> JavaUtilMap::remove(const jnipp::Ref<JavaLangObject>& a0) const {
+    static jnipp::Method<JavaLangObject,JavaLangObject> method(clazz(), "remove", "(Ljava/lang/Object;)Ljava/lang/Object;");
+    return method.call(*this, a0);
+}
+
+// public abstract java.lang.Object java.util.Map.get(java.lang.Object)
+jnipp::LocalRef<JavaLangObject> JavaUtilMap::get(const jnipp::Ref<JavaLangObject>& a0) const {
+    static jnipp::Method<JavaLangObject,JavaLangObject> method(clazz(), "get", "(Ljava/lang/Object;)Ljava/lang/Object;");
+    return method.call(*this, a0);
+}
+
+// public abstract java.lang.Object java.util.Map.put(java.lang.Object,java.lang.Object)
+jnipp::LocalRef<JavaLangObject> JavaUtilMap::put(const jnipp::Ref<JavaLangObject>& a0, const jnipp::Ref<JavaLangObject>& a1) const {
+    static jnipp::Method<JavaLangObject,JavaLangObject,JavaLangObject> method(clazz(), "put", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;");
+    return method.call(*this, a0, a1);
+}
+
+// public abstract boolean java.util.Map.equals(java.lang.Object)
+jboolean JavaUtilMap::equals(const jnipp::Ref<JavaLangObject>& a0) const {
+    static jnipp::Method<jboolean,JavaLangObject> method(clazz(), "equals", "(Ljava/lang/Object;)Z");
+    return method.call(*this, a0);
+}
+
+// public abstract java.util.Collection java.util.Map.values()
+jnipp::LocalRef<JavaUtilCollection> JavaUtilMap::values() const {
+    static jnipp::Method<JavaUtilCollection> method(clazz(), "values", "()Ljava/util/Collection;");
+    return method.call(*this);
+}
+
+// public abstract int java.util.Map.hashCode()
+jint JavaUtilMap::hashCode() const {
+    static jnipp::Method<jint> method(clazz(), "hashCode", "()I");
+    return method.call(*this);
+}
+
+// public abstract void java.util.Map.clear()
+void JavaUtilMap::clear() const {
+    static jnipp::Method<void> method(clazz(), "clear", "()V");
+    method.call(*this);
+}
+
+// public abstract boolean java.util.Map.isEmpty()
+jboolean JavaUtilMap::isEmpty() const {
+    static jnipp::Method<jboolean> method(clazz(), "isEmpty", "()Z");
+    return method.call(*this);
+}
+
+// public abstract int java.util.Map.size()
+jint JavaUtilMap::size() const {
+    static jnipp::Method<jint> method(clazz(), "size", "()I");
+    return method.call(*this);
+}
+
+// public abstract java.util.Set java.util.Map.entrySet()
+jnipp::LocalRef<JavaUtilSet> JavaUtilMap::entrySet() const {
+    static jnipp::Method<JavaUtilSet> method(clazz(), "entrySet", "()Ljava/util/Set;");
+    return method.call(*this);
+}
+
+// public abstract void java.util.Map.putAll(java.util.Map)
+void JavaUtilMap::putAll(const jnipp::Ref<JavaUtilMap>& a0) const {
+    static jnipp::Method<void,JavaUtilMap> method(clazz(), "putAll", "(Ljava/util/Map;)V");
+    method.call(*this, a0);
+}
+
+// public abstract java.util.Set java.util.Map.keySet()
+jnipp::LocalRef<JavaUtilSet> JavaUtilMap::keySet() const {
+    static jnipp::Method<JavaUtilSet> method(clazz(), "keySet", "()Ljava/util/Set;");
+    return method.call(*this);
+}
+
+// public abstract boolean java.util.Map.containsValue(java.lang.Object)
+jboolean JavaUtilMap::containsValue(const jnipp::Ref<JavaLangObject>& a0) const {
+    static jnipp::Method<jboolean,JavaLangObject> method(clazz(), "containsValue", "(Ljava/lang/Object;)Z");
+    return method.call(*this, a0);
+}
+
+// public abstract boolean java.util.Map.containsKey(java.lang.Object)
+jboolean JavaUtilMap::containsKey(const jnipp::Ref<JavaLangObject>& a0) const {
+    static jnipp::Method<jboolean,JavaLangObject> method(clazz(), "containsKey", "(Ljava/lang/Object;)Z");
+    return method.call(*this, a0);
+}
+jnipp::GlobalRef<jnipp::Class>& JavaUtilSet::clazz() {
+    static jnipp::GlobalRef<jnipp::Class> cls;
+    if (!cls) cls.set(jnipp::Class::forName("java/util/Set"));
+    return cls;
+}
+
+// public abstract boolean java.util.Set.add(java.lang.Object)
+jboolean JavaUtilSet::add(const jnipp::Ref<JavaLangObject>& a0) const {
+    static jnipp::Method<jboolean,JavaLangObject> method(clazz(), "add", "(Ljava/lang/Object;)Z");
+    return method.call(*this, a0);
+}
+
+// public abstract boolean java.util.Set.remove(java.lang.Object)
+jboolean JavaUtilSet::remove(const jnipp::Ref<JavaLangObject>& a0) const {
+    static jnipp::Method<jboolean,JavaLangObject> method(clazz(), "remove", "(Ljava/lang/Object;)Z");
+    return method.call(*this, a0);
+}
+
+// public abstract boolean java.util.Set.equals(java.lang.Object)
+jboolean JavaUtilSet::equals(const jnipp::Ref<JavaLangObject>& a0) const {
+    static jnipp::Method<jboolean,JavaLangObject> method(clazz(), "equals", "(Ljava/lang/Object;)Z");
+    return method.call(*this, a0);
+}
+
+// public abstract int java.util.Set.hashCode()
+jint JavaUtilSet::hashCode() const {
+    static jnipp::Method<jint> method(clazz(), "hashCode", "()I");
+    return method.call(*this);
+}
+
+// public abstract void java.util.Set.clear()
+void JavaUtilSet::clear() const {
+    static jnipp::Method<void> method(clazz(), "clear", "()V");
+    method.call(*this);
+}
+
+// public abstract boolean java.util.Set.isEmpty()
+jboolean JavaUtilSet::isEmpty() const {
+    static jnipp::Method<jboolean> method(clazz(), "isEmpty", "()Z");
+    return method.call(*this);
+}
+
+// public abstract boolean java.util.Set.contains(java.lang.Object)
+jboolean JavaUtilSet::contains(const jnipp::Ref<JavaLangObject>& a0) const {
+    static jnipp::Method<jboolean,JavaLangObject> method(clazz(), "contains", "(Ljava/lang/Object;)Z");
+    return method.call(*this, a0);
+}
+
+// public abstract int java.util.Set.size()
+jint JavaUtilSet::size() const {
+    static jnipp::Method<jint> method(clazz(), "size", "()I");
+    return method.call(*this);
+}
+
+// public abstract java.lang.Object[] java.util.Set.toArray()
+jnipp::LocalRef<jnipp::Array<JavaLangObject>> JavaUtilSet::toArray() const {
+    static jnipp::Method<jnipp::Array<JavaLangObject>> method(clazz(), "toArray", "()[Ljava/lang/Object;");
+    return method.call(*this);
+}
+
+// public abstract java.lang.Object[] java.util.Set.toArray(java.lang.Object[])
+jnipp::LocalRef<jnipp::Array<JavaLangObject>> JavaUtilSet::toArray(const jnipp::Ref<jnipp::Array<JavaLangObject>>& a0) const {
+    static jnipp::Method<jnipp::Array<JavaLangObject>,jnipp::Array<JavaLangObject>> method(clazz(), "toArray", "([Ljava/lang/Object;)[Ljava/lang/Object;");
+    return method.call(*this, a0);
+}
+
+// public abstract boolean java.util.Set.addAll(java.util.Collection)
+jboolean JavaUtilSet::addAll(const jnipp::Ref<JavaUtilCollection>& a0) const {
+    static jnipp::Method<jboolean,JavaUtilCollection> method(clazz(), "addAll", "(Ljava/util/Collection;)Z");
+    return method.call(*this, a0);
+}
+
+// public abstract java.util.Iterator java.util.Set.iterator()
+jnipp::LocalRef<JavaUtilIterator> JavaUtilSet::iterator() const {
+    static jnipp::Method<JavaUtilIterator> method(clazz(), "iterator", "()Ljava/util/Iterator;");
+    return method.call(*this);
+}
+
+// public abstract boolean java.util.Set.containsAll(java.util.Collection)
+jboolean JavaUtilSet::containsAll(const jnipp::Ref<JavaUtilCollection>& a0) const {
+    static jnipp::Method<jboolean,JavaUtilCollection> method(clazz(), "containsAll", "(Ljava/util/Collection;)Z");
+    return method.call(*this, a0);
+}
+
+// public abstract boolean java.util.Set.removeAll(java.util.Collection)
+jboolean JavaUtilSet::removeAll(const jnipp::Ref<JavaUtilCollection>& a0) const {
+    static jnipp::Method<jboolean,JavaUtilCollection> method(clazz(), "removeAll", "(Ljava/util/Collection;)Z");
+    return method.call(*this, a0);
+}
+
+// public abstract boolean java.util.Set.retainAll(java.util.Collection)
+jboolean JavaUtilSet::retainAll(const jnipp::Ref<JavaUtilCollection>& a0) const {
+    static jnipp::Method<jboolean,JavaUtilCollection> method(clazz(), "retainAll", "(Ljava/util/Collection;)Z");
+    return method.call(*this, a0);
+}
 jnipp::GlobalRef<jnipp::Class>& JavaTest::clazz() {
     static jnipp::GlobalRef<jnipp::Class> cls;
     if (!cls) cls.set(jnipp::Class::forName("JavaTest"));
@@ -561,11 +745,6 @@ jnipp::LocalRef<JavaTest> JavaTest::construct() {
 jnipp::StaticField<JavaLangObject> JavaTest::staticObject ("JavaTest", "staticObject", "Ljava/lang/Object;");
 #undef staticInt
 jnipp::StaticField<jint> JavaTest::staticInt ("JavaTest", "staticInt", "I");
-jnipp::GlobalRef<jnipp::Class>& JavaNioCharsetCharset::clazz() {
-    static jnipp::GlobalRef<jnipp::Class> cls;
-    if (!cls) cls.set(jnipp::Class::forName("java/nio/charset/Charset"));
-    return cls;
-}
 jnipp::GlobalRef<jnipp::Class>& JavaUtilComparator::clazz() {
     static jnipp::GlobalRef<jnipp::Class> cls;
     if (!cls) cls.set(jnipp::Class::forName("java/util/Comparator"));
@@ -581,9 +760,19 @@ jnipp::GlobalRef<jnipp::Class>& JavaLangStringBuffer::clazz() {
     if (!cls) cls.set(jnipp::Class::forName("java/lang/StringBuffer"));
     return cls;
 }
-jnipp::GlobalRef<jnipp::Class>& JavaUtilLocale::clazz() {
+jnipp::GlobalRef<jnipp::Class>& JavaUtilCollection::clazz() {
     static jnipp::GlobalRef<jnipp::Class> cls;
-    if (!cls) cls.set(jnipp::Class::forName("java/util/Locale"));
+    if (!cls) cls.set(jnipp::Class::forName("java/util/Collection"));
+    return cls;
+}
+jnipp::GlobalRef<jnipp::Class>& JavaLangCharSequence::clazz() {
+    static jnipp::GlobalRef<jnipp::Class> cls;
+    if (!cls) cls.set(jnipp::Class::forName("java/lang/CharSequence"));
+    return cls;
+}
+jnipp::GlobalRef<jnipp::Class>& JavaNioCharsetCharset::clazz() {
+    static jnipp::GlobalRef<jnipp::Class> cls;
+    if (!cls) cls.set(jnipp::Class::forName("java/nio/charset/Charset"));
     return cls;
 }
 jnipp::GlobalRef<jnipp::Class>& JavaLangStringBuilder::clazz() {
@@ -591,9 +780,14 @@ jnipp::GlobalRef<jnipp::Class>& JavaLangStringBuilder::clazz() {
     if (!cls) cls.set(jnipp::Class::forName("java/lang/StringBuilder"));
     return cls;
 }
-jnipp::GlobalRef<jnipp::Class>& JavaLangCharSequence::clazz() {
+jnipp::GlobalRef<jnipp::Class>& JavaUtilLocale::clazz() {
     static jnipp::GlobalRef<jnipp::Class> cls;
-    if (!cls) cls.set(jnipp::Class::forName("java/lang/CharSequence"));
+    if (!cls) cls.set(jnipp::Class::forName("java/util/Locale"));
+    return cls;
+}
+jnipp::GlobalRef<jnipp::Class>& JavaUtilIterator::clazz() {
+    static jnipp::GlobalRef<jnipp::Class> cls;
+    if (!cls) cls.set(jnipp::Class::forName("java/util/Iterator"));
     return cls;
 }
 
